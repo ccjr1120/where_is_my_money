@@ -86,11 +86,11 @@ flutter:
     - family: Ali
       fonts:
         - asset: assets/fonts/FontsFree-Net-Alibaba-PuHuiTi.ttf
-          weight: 500
+          weight: 100
     - family: Din
       fonts:
         - asset: assets/fonts/FontsFree-Net-DINPro-1.ttf
-          weight: 500
+          weight: 100
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
