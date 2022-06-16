@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:where_is_my_money/page/home/nodebook_list/details_card.dart';
+import 'package:where_is_my_money/page/home/nodebook_list/details_card/details_card.dart';
 import 'package:where_is_my_money/page/home/nodebook_list/item_card.dart';
 
 class NotebookList extends StatelessWidget {
