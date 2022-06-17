@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'circular_progress.dart';
 
 class DetailsCard extends StatelessWidget {
   const DetailsCard({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class DetailsCard extends StatelessWidget {
       ),
       child: Container(
         padding: const EdgeInsets.fromLTRB(16, 20, 16, 20),
-        height: 166,
+        height: 152,
         child: Row(
           children: [
             Expanded(
@@ -85,11 +86,13 @@ class DetailsCard extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
-              flex: 1,
+            SizedBox(
+              width: 72,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  const Expanded(child: Text('Ring')),
+                  const Expanded(child: CircularProgress()),
                   Container(
                     padding: const EdgeInsets.fromLTRB(12, 4, 12, 4),
                     decoration: BoxDecoration(
@@ -98,7 +101,6 @@ class DetailsCard extends StatelessWidget {
                     child: const Text('设置预算',
                         style: TextStyle(
                           color: Color.fromRGBO(51, 138, 121, 1),
-                          fontFamily: "Din",
                           fontSize: 12,
                           fontWeight: FontWeight.w400,
                         )),
