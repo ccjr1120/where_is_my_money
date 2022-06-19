@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         title: "where is my money",
         theme: ThemeData(fontFamily: "Ali"),
-        home: const HomePage());
+        home: Container(
+            padding: const EdgeInsets.all(8),
+            color: const Color.fromRGBO(246, 247, 250, 1),
+            child: const Scaffold(body: HomePage())));
   }
 }

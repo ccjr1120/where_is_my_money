@@ -40,12 +40,26 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromRGBO(246, 247, 250, 1),
-      padding: const EdgeInsets.all(8),
-      child: Column(
-        children: const [HelloBanner(), BillList(), BillDetailsList()],
-      ),
+    // return Container(
+    //   color: const Color.fromRGBO(246, 247, 250, 1),
+    //   padding: const EdgeInsets.all(8),
+    //   child: Column(
+    //     children: const [HelloBanner(), BillList(), BillDetailsList()],
+    //   ),
+    // );
+    return CustomScrollView(
+      slivers: [
+        SliverAppBar(
+          title: Container(
+            padding: const EdgeInsets.all(8),
+            child: Column(
+              children: const [HelloBanner()],
+            ),
+          ),
+          expandedHeight: 100,
+          collapsedHeight: 350,
+        )
+      ],
     );
   }
 }
