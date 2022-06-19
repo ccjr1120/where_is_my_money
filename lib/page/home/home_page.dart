@@ -44,7 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       color: const Color.fromRGBO(246, 247, 250, 1),
       padding: const EdgeInsets.all(8),
       child: Column(
-        children: const [HelloBanner(), BillList()],
+        children: const [HelloBanner(), BillList(), BillDetailsList()],
       ),
     );
   }
