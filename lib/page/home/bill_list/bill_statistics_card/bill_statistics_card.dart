@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'circular_progress.dart';
 
-class DetailsCard extends StatelessWidget {
-  const DetailsCard({Key? key}) : super(key: key);
+class BillStatisticsCard extends StatelessWidget {
+  const BillStatisticsCard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

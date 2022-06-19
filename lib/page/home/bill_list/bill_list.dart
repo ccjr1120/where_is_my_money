@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:where_is_my_money/page/home/nodebook_list/details_card/details_card.dart';
-import 'package:where_is_my_money/page/home/nodebook_list/item_card.dart';
+import 'package:where_is_my_money/page/home/bill_list/bill_statistics_card/bill_statistics_card.dart';
+import 'package:where_is_my_money/page/home/bill_list/item_card.dart';
 
-class NotebookList extends StatelessWidget {
+class BillList extends StatelessWidget {
   static const exampleList = [
     ItemCard(name: '个人帐本', imageAsset: 'assets/images/1.png'),
     ItemCard(name: '家庭账本', imageAsset: 'assets/images/2.png'),
@@ -19,7 +19,7 @@ class NotebookList extends StatelessWidget {
     ItemCard(name: '旅行账本', imageAsset: 'assets/images/13.png'),
   ];
 
-  const NotebookList({Key? key}) : super(key: key);
+  const BillList({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +85,7 @@ class NotebookList extends StatelessWidget {
             )
           ],
         ),
-        const DetailsCard()
+        const BillStatisticsCard()
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:where_is_my_money/page/home/nodebook_list/notebook_list.dart';
+import 'package:where_is_my_money/page/home/bill_details_list/bill_details_list.dart';
+import 'package:where_is_my_money/page/home/bill_list/bill_list.dart';
 import 'hello_banner.dart';
 
 class HomePage extends StatelessWidget {
@@ -43,10 +44,7 @@ class _MyHomePageState extends State<MyHomePage> {
       color: const Color.fromRGBO(246, 247, 250, 1),
       padding: const EdgeInsets.all(8),
       child: Column(
-        children: const [
-          HelloBanner(),
-          NotebookList(),
-        ],
+        children: const [HelloBanner(), BillList()],
       ),
     );
   }
