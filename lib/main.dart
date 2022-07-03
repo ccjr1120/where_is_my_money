@@ -14,10 +14,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "where is my money",
-        theme: ThemeData(fontFamily: "Ali"),
+        theme: ThemeData(
+          fontFamily: "Ali",
+        ),
         home: Container(
-            padding: const EdgeInsets.all(8),
             color: const Color.fromRGBO(246, 247, 250, 1),
+            padding: const EdgeInsets.all(8),
             child: const Scaffold(body: HomePage())));
   }
 }

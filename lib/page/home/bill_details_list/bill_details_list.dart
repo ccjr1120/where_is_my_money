@@ -5,7 +5,7 @@ class BillDetailsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 400,
       child: Scaffold(
           body: CustomScrollView(

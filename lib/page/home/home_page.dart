@@ -40,25 +40,63 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    // return Container(
-    //   color: const Color.fromRGBO(246, 247, 250, 1),
-    //   padding: const EdgeInsets.all(8),
-    //   child: Column(
-    //     children: const [HelloBanner(), BillList(), BillDetailsList()],
-    //   ),
-    // );
     return CustomScrollView(
       slivers: [
         SliverAppBar(
-          title: Container(
-            padding: const EdgeInsets.all(8),
+          backgroundColor: const Color.fromRGBO(246, 247, 250, 1),
+          flexibleSpace: SizedBox(
+            height: 320,
             child: Column(
-              children: const [HelloBanner()],
+              children: const [HelloBanner(), BillList()],
             ),
           ),
-          expandedHeight: 100,
-          collapsedHeight: 350,
-        )
+          collapsedHeight: 320,
+        ),
+        SliverAppBar(
+          backgroundColor: const Color.fromRGBO(246, 247, 250, 1),
+          title: Row(
+            children: const [
+              Text(
+                "账本",
+                style: TextStyle(
+                    color: Color.fromARGB(255, 74, 123, 110),
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold),
+              ),
+              Text("统计",
+                  style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold))
+            ],
+          ),
+          primary:false,
+          stretch:false,
+          centerTitle: false,
+          forceElevated:false,
+          toolbarHeight:30,
+          collapsedHeight: 30,
+          pinned: true,
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Card(
+                margin: const EdgeInsets.all(15),
+                child: Container(
+                  color: Colors.blue[100 * (index % 9 + 1)],
+                  height: 80,
+                  alignment: Alignment.center,
+                  child: Text(
+                    "Item $index",
+                    style: const TextStyle(fontSize: 30),
+                  ),
+                ),
+              );
+            },
+            childCount: 1000, // 1000 list items
+          ),
+        ),
       ],
     );
   }
