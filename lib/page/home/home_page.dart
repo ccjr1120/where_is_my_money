@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:where_is_my_money/page/home/bill_details_list/bill_details_list.dart';
 import 'package:where_is_my_money/page/home/bill_list/bill_list.dart';
-import 'hello_banner.dart';
+import 'hello_banner/hello_banner.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -70,11 +70,11 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontWeight: FontWeight.bold))
             ],
           ),
-          primary:false,
-          stretch:false,
+          primary: false,
+          stretch: false,
           centerTitle: false,
-          forceElevated:false,
-          toolbarHeight:30,
+          forceElevated: false,
+          toolbarHeight: 30,
           collapsedHeight: 30,
           pinned: true,
         ),
