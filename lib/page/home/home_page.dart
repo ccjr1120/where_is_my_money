@@ -47,7 +47,13 @@ class _MyHomePageState extends State<MyHomePage> {
           flexibleSpace: SizedBox(
             height: 320,
             child: Column(
-              children: const [HelloBanner(), BillList()],
+              children: const [
+                HelloBanner(),
+                Padding(
+                  padding: EdgeInsets.only(top: 8),
+                  child: BillList(),
+                )
+              ],
             ),
           ),
           collapsedHeight: 320,
