@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         SliverAppBar(
           backgroundColor: const Color.fromRGBO(246, 247, 250, 1),
           flexibleSpace: SizedBox(
-            height: 320,
+            height: 336,
             child: Column(
               children: const [
                 HelloBanner(),
@@ -56,7 +56,7 @@ class _MyHomePageState extends State<MyHomePage> {
               ],
             ),
           ),
-          collapsedHeight: 320,
+          collapsedHeight: 336,
         ),
         SliverAppBar(
           backgroundColor: const Color.fromRGBO(246, 247, 250, 1),

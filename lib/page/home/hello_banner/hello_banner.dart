@@ -2,13 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:where_is_my_money/page/home/hello_banner/TimeSlot.dart';
 
-class HelloBanner extends StatefulWidget {
-  const HelloBanner({Key? key}) : super(key: key);
-
-  @override
-  State<StatefulWidget> createState() => _HelloBannerState();
-}
-
 Future getWeather() async {
   try {
     Response response;
@@ -25,6 +18,13 @@ Future getWeather() async {
   } catch (e) {
     return null;
   }
+}
+
+class HelloBanner extends StatefulWidget {
+  const HelloBanner({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _HelloBannerState();
 }
 
 class _HelloBannerState extends State<HelloBanner> {

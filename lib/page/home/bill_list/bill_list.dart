@@ -2,24 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:where_is_my_money/page/home/bill_list/bill_statistics_card/bill_statistics_card.dart';
 import 'package:where_is_my_money/page/home/bill_list/item_card.dart';
 
-class BillList extends StatelessWidget {
+class BillList extends StatefulWidget {
+  const BillList({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _BillListState();
+}
+
+class _BillListState extends State<BillList> {
   static const exampleList = [
-    ItemCard(name: '个人帐本', imageAsset: 'assets/images/1.png'),
-    ItemCard(name: '家庭账本', imageAsset: 'assets/images/2.png'),
-    ItemCard(name: '旅行账本', imageAsset: 'assets/images/3.png'),
-    ItemCard(name: '个人帐本', imageAsset: 'assets/images/4.png'),
-    ItemCard(name: '家庭账本', imageAsset: 'assets/images/5.png'),
-    ItemCard(name: '旅行账本', imageAsset: 'assets/images/6.png'),
-    ItemCard(name: '个人帐本', imageAsset: 'assets/images/7.png'),
-    ItemCard(name: '家庭账本', imageAsset: 'assets/images/8.png'),
-    ItemCard(name: '旅行账本', imageAsset: 'assets/images/9.png'),
-    ItemCard(name: '个人帐本', imageAsset: 'assets/images/10.png'),
-    ItemCard(name: '家庭账本', imageAsset: 'assets/images/11.png'),
-    ItemCard(name: '旅行账本', imageAsset: 'assets/images/12.png'),
-    ItemCard(name: '旅行账本', imageAsset: 'assets/images/13.png'),
+    {"name": '个人帐本', "imageAsset": 'assets/images/1.png'},
+    {"name": '家庭账本', "imageAsset": 'assets/images/2.png'},
+    {"name": '旅行账本', "imageAsset": 'assets/images/3.png'},
+    {"name": '个人帐本', "imageAsset": 'assets/images/4.png'},
+    {"name": '家庭账本', "imageAsset": 'assets/images/5.png'},
+    {"name": '旅行账本', "imageAsset": 'assets/images/6.png'},
+    {"name": '个人帐本', "imageAsset": 'assets/images/7.png'},
+    {"name": '家庭账本', "imageAsset": 'assets/images/8.png'},
+    {"name": '旅行账本', "imageAsset": 'assets/images/9.png'},
+    {"name": '个人帐本', "imageAsset": 'assets/images/10.png'},
+    {"name": '家庭账本', "imageAsset": 'assets/images/11.png'},
+    {"name": '旅行账本', "imageAsset": 'assets/images/12.png'},
   ];
 
-  const BillList({Key? key}) : super(key: key);
+  int curItem = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +37,22 @@ class BillList extends StatelessWidget {
               flex: 1,
               child: Container(
                 margin: const EdgeInsets.only(right: 8),
-                height: 80,
+                height: 96,
                 child: ListView.separated(
                   scrollDirection: Axis.horizontal,
-                  itemCount: 13,
+                  itemCount: exampleList.length,
                   itemBuilder: (context, index) {
-                    return exampleList[index];
+                    Map<String, String> listItem = exampleList[index];
+                    return ItemCard(
+                      name: listItem['name'] ?? '',
+                      imageAsset: listItem["imageAsset"] ?? '',
+                      active: curItem == index,
+                      onTap: () {
+                        setState(() {
+                          curItem = index;
+                        });
+                      },
+                    );
                   },
                   separatorBuilder: (context, index) {
                     return const SizedBox(
@@ -85,7 +101,10 @@ class BillList extends StatelessWidget {
             )
           ],
         ),
-        const BillStatisticsCard()
+        const Padding(
+          padding: EdgeInsets.only(top: 4),
+          child: BillStatisticsCard(),
+        )
       ],
     );
   }
